@@ -12,9 +12,17 @@ export interface ProvidersProps {
 }
 
 export function Providers({ children, themeProps }: ProvidersProps) {
+  const router = useRouter();
+  const path = usePathname();
+
+  React.useEffect(() => {
+    if (path === "/") {
+      router.push("/task");
+    }
+  }, []);
 
   return (
-    <NextUIProvider>
+    <NextUIProvider navigate={router.push}>
       <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
     </NextUIProvider>
   );
