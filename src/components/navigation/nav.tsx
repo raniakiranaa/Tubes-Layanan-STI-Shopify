@@ -10,9 +10,9 @@ import { Avatar, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@
 export default function Nav() {
 
   return (
-    <div className="flexBetween max-container relative bg-white">
+    <div className="flexBetween max-container relative bg-white" >
         <Navbar
-        className="w-full px-8"
+        className="w-full px-8 fixed top-0"
         maxWidth="full"
         isBordered
         >
