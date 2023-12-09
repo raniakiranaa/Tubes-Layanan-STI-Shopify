@@ -70,15 +70,15 @@ const TransportModal = () => {
                         aria-label="Example static collection table"
                         className="flex"
                     >
-                        <TableHeader className="bg-kGrey-200 flex-row justify-center">
-                        <TableColumn key="Rank">Rank</TableColumn>
-                        <TableColumn key="Name">Name</TableColumn>
-                        <TableColumn key="Price">Price</TableColumn>
-                        <TableColumn key="DeliveryTime">Delivering Time</TableColumn>
+                        <TableHeader className="bg-kGrey-200 flex-row justify-center" >
+                        <TableColumn key="Rank" style={{ textAlign: "center" }}>Rank</TableColumn>
+                        <TableColumn key="Name" style={{ textAlign: "center" }}>Name</TableColumn>
+                        <TableColumn key="Price" style={{ textAlign: "center" }}>Price</TableColumn>
+                        <TableColumn key="DeliveryTime" style={{ textAlign: "center" }}>Delivering Time</TableColumn>
                         </TableHeader>
                         <TableBody className="flex justify-center items-center" items={list}>
                             {(item) => (
-                              <TableRow key={item.Name}>
+                              <TableRow key={item.Name} style={{ textAlign: "center" }}>
                                 {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
                               </TableRow>
                             )}

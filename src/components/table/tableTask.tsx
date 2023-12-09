@@ -1,4 +1,5 @@
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue} from "@nextui-org/react";
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue, Button} from "@nextui-org/react";
+import TransportModal from "../transportModal/transportModal";
 
 const columns = [
     {
@@ -82,11 +83,30 @@ export default function TableComponent() {
           {(column) => <TableColumn key={column.key} style={{ textAlign: "center" }}>{column.label}</TableColumn>}
         </TableHeader>
         <TableBody items={rows}>
-          {(item) => (
-            <TableRow key={item.key} style={{ textAlign: "center" }}>
-              {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
-            </TableRow>
-          )}
+        {(item) => (
+          <TableRow key={item.key} style={{ textAlign: "center" }}>
+            {(columnKey) => (
+              <TableCell>
+                {columnKey === 'status' ? 
+                  getKeyValue(item, columnKey) === 'Assign' ? (
+                    <TransportModal />
+                  ) : (
+                    <Button
+                      className="text-kGreen-300 medium-14 px-8"
+                      radius="sm"
+                      variant="light"
+                      size="sm"
+                      isDisabled
+                    >
+                      Assign
+                    </Button>
+                  ) : (
+                    getKeyValue(item, columnKey)
+                  )}
+              </TableCell>
+            )}
+          </TableRow>
+        )}
         </TableBody>
       </Table>
     );

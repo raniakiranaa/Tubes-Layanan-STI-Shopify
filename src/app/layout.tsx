@@ -21,7 +21,7 @@ export default function RootLayout({
 			<head />
 			<body className='flex flex-col min-h-screen'>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-            <Nav />
+            		<Nav />
 						<main className="relative overflow-hidden flex-1 min-h-screen bg-kGreen-100">
 							{/* <ToastContainer /> */}
 							{children}

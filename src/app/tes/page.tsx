@@ -9,7 +9,10 @@ const page = () => {
   return (
     <div>
         {/* <Sidebar currentPage='Task List'/> */}
-        <TransportModal />
+        <div className='m-20'>
+          <TransportModal />
+        </div>
+
     </div>
   )
 }
