@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { Providers } from './providers'
 import Nav from '@/components/navigation/nav'
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,7 +24,7 @@ export default function RootLayout({
 				<Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
             		<Nav />
 						<main className="relative overflow-hidden flex-1 min-h-screen bg-kGreen-100">
-							{/* <ToastContainer /> */}
+							<ToastContainer />
 							{children}
 						</main>
             		{/* <Footer /> */}
