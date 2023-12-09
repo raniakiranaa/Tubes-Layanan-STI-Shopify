@@ -23,19 +23,25 @@ const Sidebar = ({currentPage} : SidebarProps) => {
         <div className="mt-8 ">
           <a className='text-kGreen-200 pl-8 semibold-16'>To-be Distributed</a>
           <div className="flex gap-6 mt-8 justify-center">
-            <PiStack className={isCurrentPage('taskList') ? 'text-kGrey-500 flex justify-self-center mt-1' : 'text-kGrey-100 flex justify-self-center mt-1'} style = {{width: "20px", height: "20px"}}/>
-            <a className={isCurrentPage('taskList') ? 'text-kGrey-500 semibold-18' : 'text-kGrey-100 medium-18'}>Task List</a>
+            <a href='/task'>
+              <PiStack className={isCurrentPage('taskList') ? 'text-kGrey-500 flex justify-self-center mt-1' : 'text-kGrey-100 flex justify-self-center mt-1'} style = {{width: "20px", height: "20px"}}/>
+            </a>
+            <a href="/task" className={isCurrentPage('taskList') ? 'text-kGrey-500 semibold-18' : 'text-kGrey-100 medium-18'}>Task List</a>
           </div>
         </div>
         <div className="mt-8">
           <a className='text-kGreen-200 pl-8 semibold-16'>Distribution Monitoring</a>
           <div className="flex gap-6 mt-8 pl-14 justify-start">
-            <TbTruckDelivery className={isCurrentPage('onDelivery') ? 'text-kGrey-500 flex justify-self-center mt-1' : 'text-kGrey-100 flex justify-self-center mt-1'} style = {{width: "20px", height: "20px"}} />
-            <a className={isCurrentPage('onDelivery') ? 'text-kGrey-500 semibold-18' : 'text-kGrey-100 medium-18'}>On Delivery</a>
+            <a href='/delivery'>
+              <TbTruckDelivery className={isCurrentPage('onDelivery') ? 'text-kGrey-500 flex justify-self-center mt-1' : 'text-kGrey-100 flex justify-self-center mt-1'} style = {{width: "20px", height: "20px"}} />
+            </a>
+            <a href="/delivery" className={isCurrentPage('onDelivery') ? 'text-kGrey-500 semibold-18' : 'text-kGrey-100 medium-18'}>On Delivery</a>
           </div>
           <div className="flex gap-6 mt-8 pl-14 justify-start">
-            <FaMapMarkerAlt className={isCurrentPage('maps') ? 'text-kGrey-500 flex justify-self-center mt-1' : 'text-kGrey-100 flex justify-self-center mt-1'}  style = {{width: "20px", height: "20px"}}/>
-            <a className={isCurrentPage('maps') ? 'text-kGrey-500 semibold-18' : 'text-kGrey-100 medium-18'}>Maps</a>
+            <a href="/map">
+              <FaMapMarkerAlt className={isCurrentPage('maps') ? 'text-kGrey-500 flex justify-self-center mt-1' : 'text-kGrey-100 flex justify-self-center mt-1'}  style = {{width: "20px", height: "20px"}}/>
+            </a>
+            <a href="/map" className={isCurrentPage('maps') ? 'text-kGrey-500 semibold-18' : 'text-kGrey-100 medium-18'}>Maps</a>
           </div>
         </div>
       </div>
