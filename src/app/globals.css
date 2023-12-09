@@ -128,6 +128,10 @@ body {
     @apply text-[24px] font-[600];
   }
 
+  .semibold-32 {
+    @apply text-[32px] font-[600];
+  }
+
   .bold-88 {
     @apply text-[88px] font-[700] leading-[120%];
   }

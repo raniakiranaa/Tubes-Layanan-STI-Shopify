@@ -24,6 +24,10 @@ module.exports = {
           400: "#6A6A6A",
           500: "#1E1E1E",
         },
+        kBlue: {
+          100: "#33BDFE",
+          200: "#0A7AFF",
+        },
         kYellow: "#F3B33E",
         kRed: "#FF4329",
         disable: "#ACACAC",
