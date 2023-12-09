@@ -62,25 +62,56 @@ const rows = [
         transaction_code: "PCK000000-15",
         packing: "16 August 00.00",
         delivery: "16 August 00.00",
-        status: "Assign",
-        assign: "-"
+        status: "Assigned",
+        assign: "Si Cepat"
     },
     {
         key: "6",
         transaction_code: "PCK000000-16",
         packing: "16 August 00.00",
         delivery: "16 August 00.00",
+        status: "Assigned",
+        assign: "Si Cepat"
+    },
+    {
+        key: "7",
+        transaction_code: "PCK000000-17",
+        packing: "16 August 00.00",
+        delivery: "16 August 00.00",
+        status: "Assigned",
+        assign: "Kurir Internal"
+    },
+    {
+        key: "8",
+        transaction_code: "PCK000000-18",
+        packing: "16 August 00.00",
+        delivery: "16 August 00.00",
         status: "Assign",
         assign: "-"
     },
-
+    {
+        key: "9",
+        transaction_code: "PCK000000-19",
+        packing: "16 August 00.00",
+        delivery: "16 August 00.00",
+        status: "Assign",
+        assign: "-"
+    },
+    {
+        key: "10",
+        transaction_code: "PCK000000-20",
+        packing: "16 August 00.00",
+        delivery: "16 August 00.00",
+        status: "Assigned",
+        assign: "Kurir Internal"
+  },
   ];
 
 export default function TableComponent() {
     return (
-      <Table aria-label="Example table with dynamic content">
+      <Table removeWrapper aria-label="Task List Table">
         <TableHeader columns={columns}>
-          {(column) => <TableColumn key={column.key} style={{ textAlign: "center" }}>{column.label}</TableColumn>}
+          {(column) => <TableColumn key={column.key} className="text-kGrey-400" style={{ textAlign: "center" }}>{column.label}</TableColumn>}
         </TableHeader>
         <TableBody items={rows}>
         {(item) => (
@@ -98,10 +129,18 @@ export default function TableComponent() {
                       size="sm"
                       isDisabled
                     >
-                      Assign
+                      Assigned
                     </Button>
                   ) : (
-                    getKeyValue(item, columnKey)
+                    columnKey === 'transaction_code' ? (
+                      <span className="text-black">
+                        {getKeyValue(item, columnKey)}
+                      </span>
+                    ) : (
+                      <span className="text-kGrey-300">
+                        {getKeyValue(item, columnKey)}
+                      </span>
+                    )
                   )}
               </TableCell>
             )}

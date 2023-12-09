@@ -62,7 +62,7 @@ const rows = [
         vendor: "Grab",
         plate_number: "B 0000 S",
         driver_name: "Mulyani",
-        status: "On Delivery"
+        status: "Done"
     },
     {
         key: "6",
@@ -77,17 +77,41 @@ const rows = [
 
 export default function TableComponent() {
     return (
-      <Table aria-label="Example table with dynamic content">
+      <Table removeWrapper aria-label="On Delivery Table">
         <TableHeader columns={columns}>
-          {(column) => <TableColumn key={column.key} style={{ textAlign: "center" }}>{column.label}</TableColumn>}
+          {(column) => <TableColumn key={column.key} className="text-kGrey-400" style={{ textAlign: "center" }}>{column.label}</TableColumn>}
         </TableHeader>
         <TableBody items={rows}>
-          {(item) => (
-            <TableRow key={item.key} style={{ textAlign: "center" }}>
-              {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
-    );
-}
+        {(item) => (
+          <TableRow key={item.key} style={{ textAlign: "center" }}>
+            {(columnKey) => (
+              <TableCell>
+                {columnKey === 'status' ? (
+                  getKeyValue(item, columnKey) === 'Done' ? (
+                    <span className="text-kGreen-300">
+                      {getKeyValue(item, columnKey)}
+                    </span>
+                  ) : (
+                    <span className="text-kYellow">
+                      {getKeyValue(item, columnKey)}
+                    </span>
+                  )
+                ) : (
+                  columnKey === 'transaction_code' ? (
+                    <span className="text-black">
+                      {getKeyValue(item, columnKey)}
+                    </span>
+                  ) : (
+                    <span className="text-kGrey-300">
+                      {getKeyValue(item, columnKey)}
+                    </span>
+                  )
+                )}
+              </TableCell>
+            )}
+          </TableRow>
+        )}
+      </TableBody>
+    </Table>
+  )
+};

@@ -10,7 +10,7 @@ const Task = () => {
   return (
     <div>
         <Table />
-        {/* <Sidebar currentPage='taskList'/> */}
+        <Sidebar currentPage='taskList'/>
         <TransportModal />
     </div>
   )

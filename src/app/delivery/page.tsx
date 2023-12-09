@@ -9,6 +9,7 @@ import Table from '@/components/table/card'
 const Delivery = () => {
   return (
     <div>
+        <Sidebar currentPage='onDelivery'/>
         <Table />
         {/* <Sidebar currentPage='onDelivery'/> */}
     </div>
