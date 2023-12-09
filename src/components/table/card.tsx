@@ -18,7 +18,7 @@ export default function App() {
             width={40}
           />
           <div className="flex flex-col"> */}
-            <p className="ml-4 text-md semibold-24">On Delivery</p>
+            <p className="ml-4 mt-4 -mb-2 text-md semibold-24">On Delivery</p>
             {/* <p className="text-small text-default-500">nextui.org</p>
           </div> */}
         </CardHeader>
