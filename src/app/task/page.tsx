@@ -9,6 +9,7 @@ const Task = () => {
   return (
     <div>
         <Sidebar currentPage='taskList'/>
+        <TransportModal />
     </div>
   )
 }
