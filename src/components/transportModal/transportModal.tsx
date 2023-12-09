@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Input } from "@nextui-org/react";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Input, getKeyValue } from "@nextui-org/react";
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, RadioGroup, Radio} from "@nextui-org/react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -7,6 +7,27 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const TransportModal = () => {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
+
+  const list = [
+    {
+      Rank: "1",
+      Name: "Gojek",
+      Price: "Rp122.000",
+      DeliveryTime: "2-4 hours",
+    },
+    {
+      Rank: "2",
+      Name: "AAM 1",
+      Price: "Rp32.000",
+      DeliveryTime: "1 day",
+    },
+    {
+      Rank: "3",
+      Name: "AAM 2",
+      Price: "Rp42.000",
+      DeliveryTime: "2 day",
+    },
+  ];
 
   return (
     <>
@@ -50,30 +71,27 @@ const TransportModal = () => {
                         className="flex"
                     >
                         <TableHeader className="bg-kGrey-200 flex-row justify-center">
-                        <TableColumn>Rank</TableColumn>
-                        <TableColumn>Name</TableColumn>
-                        <TableColumn >Price</TableColumn>
-                        <TableColumn >Delivering Time</TableColumn>
+                        <TableColumn key="Rank">Rank</TableColumn>
+                        <TableColumn key="Name">Name</TableColumn>
+                        <TableColumn key="Price">Price</TableColumn>
+                        <TableColumn key="DeliveryTime">Delivering Time</TableColumn>
                         </TableHeader>
-                        <TableBody className="flex justify-center items-center">
-                        <TableRow key="1">
-                            <TableCell>1</TableCell>
-                            <TableCell>Gojek</TableCell>
-                            <TableCell>Rp122.000</TableCell>
-                            <TableCell>2-4 hours</TableCell>
-                        </TableRow>
-                        <TableRow key="2">
-                            <TableCell>2</TableCell>
-                            <TableCell>AAM 1</TableCell>
-                            <TableCell>Rp31.000</TableCell>
-                            <TableCell>1 day</TableCell>
-                        </TableRow>
-                        <TableRow key="3">
-                            <TableCell>3</TableCell>
-                            <TableCell>AAM 2</TableCell>
-                            <TableCell>Rp32.000</TableCell>
-                            <TableCell>2-day</TableCell>
-                        </TableRow>
+                        <TableBody className="flex justify-center items-center" items={list}>
+                            {(item) => (
+                              <TableRow key={item.Name}>
+                                {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
+                              </TableRow>
+                            )}
+                          {/* <div>
+                            {list.map((item, index) => (
+                              <TableRow key={index}>
+                                <TableCell>{item.Rank}</TableCell>
+                                <TableCell>{item.name}</TableCell>
+                                <TableCell>{item.price}</TableCell>
+                                <TableCell>{item.DeliveryTime}</TableCell>
+                              </TableRow>
+                            ))};
+                          </div> */}
                         </TableBody>
                     </Table>
                     </div>

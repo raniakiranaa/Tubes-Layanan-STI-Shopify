@@ -8,7 +8,7 @@ import React from 'react'
 const page = () => {
   return (
     <div>
-        <Sidebar currentPage='Task List'/>
+        {/* <Sidebar currentPage='Task List'/> */}
         <TransportModal />
     </div>
   )
