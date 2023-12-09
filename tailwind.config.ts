@@ -8,11 +8,25 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+      fontFamily: { poppins: ["Poppins", "sans-serif", "system-ui"] },
+      colors: {
+        kGreen: {
+          100: "#E5FFE6",
+          200: "#61B566",
+          300: "#3DD598",
+        },
+        kGrey: {
+          100: "#ACACAC",
+          200: "#F5F5F5",
+          300: "#858585",
+          400: "#6A6A6A",
+          500: "#1E1E1E",
+        },
+        kYellow: "#F3B33E",
+        kRed: "#FF4329",
+        disable: "#ACACAC",
+        kHeadTable: "#F5F5F5",
+      }
     },
   },
   plugins: [],
