@@ -72,6 +72,38 @@ const rows = [
         driver_name: "Mulyani",
         status: "On Delivery"
     },
+    {
+      key: "7",
+      transaction_code: "PCK000000-17",
+      vendor: "Grab",
+      plate_number: "B 0000 S",
+      driver_name: "Mulyani",
+      status: "On Delivery"
+    },
+    {
+      key: "8",
+      transaction_code: "PCK000000-18",
+      vendor: "Grab",
+      plate_number: "B 0000 S",
+      driver_name: "Mulyani",
+      status: "Done"
+    },
+    {
+      key: "9",
+      transaction_code: "PCK000000-19",
+      vendor: "Grab",
+      plate_number: "B 0000 S",
+      driver_name: "Mulyani",
+      status: "Done"
+    },
+    {
+      key: "10",
+      transaction_code: "PCK000000-20",
+      vendor: "Grab",
+      plate_number: "B 0000 S",
+      driver_name: "Mulyani",
+      status: "Done"
+    },
 
   ];
 
