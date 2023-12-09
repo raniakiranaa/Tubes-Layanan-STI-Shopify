@@ -6,8 +6,8 @@ import {Pagination} from "@nextui-org/react";
 
 export default function CardComponent() {
   return (
-    <div>
-      <Card className="max-w-[980px] mt-20 ml-64">
+    <div className="ml-56 pt-4">
+      <Card className="mx-auto max-w-full m-8 mt-20">
         <CardHeader className="flex gap-1">
             <p className="ml-4 mt-4 -mb-2 text-md semibold-24">On Delivery</p>
         </CardHeader>
